@@ -111,3 +111,32 @@ html, body {
         color: black;
     }
 }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .logo {
+        width: 80vw;  /* Make logo wider on mobile */
+        height: auto;
+    }
+
+    .text-path, .text-stroke {
+        font-size: 32px;  /* Larger text on mobile */
+        fill: white;  /* Always white */
+        opacity: 1;  /* Always visible */
+    }
+
+    .text-stroke {
+        clip-path: none;  /* Remove animation clip path */
+        transition: none;  /* Disable transitions */
+    }
+
+    .github-link {
+        width: 32px;  /* Larger GitHub icon */
+        height: 32px;
+    }
+
+    .github-link svg path {
+        stroke: white;  /* Always white */
+        transition: none;  /* Disable transitions */
+    }
+}
