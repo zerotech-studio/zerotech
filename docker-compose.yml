@@ -1,9 +1,11 @@
-version: "3.8"
-
 services:
   web:
     image: ghcr.io/zerotech-studio/homepage:latest
+    networks:
+      - traefik-public
     deploy:
+      mode: replicated
+      replicas: 1
       labels:
         - traefik.enable=true
         - traefik.docker.network=traefik-public
@@ -19,8 +21,6 @@ services:
         - traefik.http.routers.homepage-http.rule=Host(`zerotech.studio`)
         - traefik.http.routers.homepage-http.entrypoints=http
         - traefik.http.routers.homepage-http.middlewares=https-redirect
-    networks:
-      - traefik-public
 
 networks:
   traefik-public:

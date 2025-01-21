@@ -45,4 +45,4 @@ jobs:
           
           # Copy docker-compose.yml and restart the service
           scp docker-compose.yml vps:~/docker-compose.yml
-          ssh vps 'docker compose pull && docker compose up -d' 
+          ssh vps 'docker pull ghcr.io/zerotech-studio/homepage:latest && docker stack deploy -c docker-compose.yml homepage' 
