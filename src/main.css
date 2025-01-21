@@ -113,32 +113,40 @@ html, body {
 }
 
 /* Mobile styles */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px), (pointer: coarse) {
     .logo {
-        transform: scale(1.5);  /* Make everything 50% bigger */
+        transform: scale(2);  /* Make it even bigger */
     }
 
     .text-path {
-        fill: white;  /* Make both texts fully white */
-        opacity: 0.1;  /* Keep the dim effect */
+        fill: white;
+        opacity: 0.1;
     }
 
     .text-stroke {
         fill: white;
-        opacity: 1;  /* Always visible */
-        clip-path: none;  /* Remove animation clip path */
-        transition: none;  /* Disable transitions */
+        opacity: 1;
+        clip-path: none !important;  /* Force remove animation */
+        transition: none !important;  /* Force disable transitions */
     }
 
     .github-link {
-        width: 36px;  /* Even larger GitHub icon */
-        height: 36px;
-        margin-top: 1rem;  /* Add some space between text and icon */
+        width: 48px;  /* Make icon bigger */
+        height: 48px;
+        margin-top: 2rem;
     }
 
     .github-link svg path {
-        stroke: white;  /* Always white */
+        stroke: white;
         opacity: 1;
-        transition: none;  /* Disable transitions */
+        transition: none !important;
+    }
+
+    /* Disable hover effects on mobile */
+    .logo:hover .text-stroke,
+    .github-link:hover svg path {
+        opacity: 1;
+        clip-path: none;
+        stroke: white;
     }
 }
