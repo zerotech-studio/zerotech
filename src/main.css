@@ -115,28 +115,30 @@ html, body {
 /* Mobile styles */
 @media (max-width: 768px) {
     .logo {
-        width: 80vw;  /* Make logo wider on mobile */
-        height: auto;
+        transform: scale(1.5);  /* Make everything 50% bigger */
     }
 
-    .text-path, .text-stroke {
-        font-size: 32px;  /* Larger text on mobile */
-        fill: white;  /* Always white */
-        opacity: 1;  /* Always visible */
+    .text-path {
+        fill: white;  /* Make both texts fully white */
+        opacity: 0.1;  /* Keep the dim effect */
     }
 
     .text-stroke {
+        fill: white;
+        opacity: 1;  /* Always visible */
         clip-path: none;  /* Remove animation clip path */
         transition: none;  /* Disable transitions */
     }
 
     .github-link {
-        width: 32px;  /* Larger GitHub icon */
-        height: 32px;
+        width: 36px;  /* Even larger GitHub icon */
+        height: 36px;
+        margin-top: 1rem;  /* Add some space between text and icon */
     }
 
     .github-link svg path {
         stroke: white;  /* Always white */
+        opacity: 1;
         transition: none;  /* Disable transitions */
     }
 }
