@@ -1,0 +1,110 @@
+@font-face {
+    font-family: 'Berkeley Mono';
+    src: url('fonts/Berkeley Mono.otf') format('opentype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #111;
+    color: white;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-family: 'Berkeley Mono', monospace;
+    cursor: pointer;
+}
+
+.text-path {
+    fill: rgba(255, 255, 255, 0.1);
+    font-size: 24px;
+    font-family: 'Berkeley Mono', monospace;
+    letter-spacing: 1px;
+}
+
+.text-stroke {
+    fill: white;
+    stroke: none;
+    font-size: 24px;
+    font-family: 'Berkeley Mono', monospace;
+    letter-spacing: 1px;
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1.5s ease, opacity 0.3s ease;
+}
+
+.logo:hover .text-stroke {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+.github-link {
+    width: 24px;
+    height: 24px;
+    display: block;
+    cursor: pointer;
+}
+
+.github-link svg {
+    width: 100%;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.1);
+    transition: color 1.5s ease;
+}
+
+.github-link:hover svg {
+    color: white;
+}
+
+.github-bg {
+    transition: fill 1s ease;
+}
+
+.github-logo {
+    opacity: 0.1;
+    transition: opacity 1s ease;
+}
+
+.github-link:hover .github-bg {
+    fill: white;
+}
+
+.github-link:hover .github-logo {
+    opacity: 1;
+}
+
+.github-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Dark mode (default) */
+:root {
+    background-color: black;
+    color: white;
+}
+
+/* Light mode */
+@media (prefers-color-scheme: light) {
+    :root {
+        background-color: white;
+        color: black;
+    }
+}
