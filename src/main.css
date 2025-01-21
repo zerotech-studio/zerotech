@@ -115,7 +115,7 @@ html, body {
 /* Mobile styles */
 @media screen and (max-width: 768px), (pointer: coarse) {
     .logo {
-        width: 90vw;  /* Take up 90% of viewport width */
+        width: 60vw;  /* Take up 90% of viewport width */
         height: auto;
         transform: none;  /* Remove fixed scaling */
     }
@@ -125,9 +125,9 @@ html, body {
     }
 
     .github-link {
-        width: min(10vw, 36px);  /* Responsive icon size with maximum */
-        height: min(10vw, 36px);
-        margin-top: min(5vw, 2rem);  /* Responsive margin */
+        width: min(7vw, 36px);  /* Responsive icon size with maximum */
+        height: min(7vw, 36px);
+        margin-top: min(5vw, 1rem);  /* Responsive margin */
     }
 
     /* Keep the rest of the mobile styles the same */
