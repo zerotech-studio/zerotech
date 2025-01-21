@@ -115,9 +115,22 @@ html, body {
 /* Mobile styles */
 @media screen and (max-width: 768px), (pointer: coarse) {
     .logo {
-        transform: scale(2);  /* Make it even bigger */
+        width: 90vw;  /* Take up 90% of viewport width */
+        height: auto;
+        transform: none;  /* Remove fixed scaling */
     }
 
+    .text-path, .text-stroke {
+        font-size: min(7vw, 32px);  /* Responsive font size with maximum */
+    }
+
+    .github-link {
+        width: min(10vw, 36px);  /* Responsive icon size with maximum */
+        height: min(10vw, 36px);
+        margin-top: min(5vw, 2rem);  /* Responsive margin */
+    }
+
+    /* Keep the rest of the mobile styles the same */
     .text-path {
         fill: white;
         opacity: 0.1;
@@ -126,14 +139,8 @@ html, body {
     .text-stroke {
         fill: white;
         opacity: 1;
-        clip-path: none !important;  /* Force remove animation */
-        transition: none !important;  /* Force disable transitions */
-    }
-
-    .github-link {
-        width: 48px;  /* Make icon bigger */
-        height: 48px;
-        margin-top: 2rem;
+        clip-path: none !important;
+        transition: none !important;
     }
 
     .github-link svg path {
@@ -142,7 +149,7 @@ html, body {
         transition: none !important;
     }
 
-    /* Disable hover effects on mobile */
+    /* Disable hover effects */
     .logo:hover .text-stroke,
     .github-link:hover svg path {
         opacity: 1;
